@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/login.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+<section>
+    <div class="form-group">
+    <h2 style="text-align: center; color: blue;">Login</h2>
+    <label for="">Enter Your Username:</label><br>
+    <input type="text" id="uname">
+    <span id="uerror"></span>
+    </div>
+    <div class="form-group">
+    <label for="">Enter Your Password:</label><br>
+    <input type="password" id="pname">
+    <span id="perror"></span>
+    </div>
+    <div class="form-group">
+        <button type="submit" id="sumbtn">Login</button>
+       
+    </div>
+         
+</section>
+
+ <script>
+
+    document.getElementById("sumbtn").addEventListener("click", () => {
+        let uname = document.querySelector("#uname").value;
+        let pname = document.querySelector("#pname").value;
+
+        let uerror = document.querySelector("#uerror");
+        let perror = document.querySelector("#perror");
+
+        
+        uerror.innerHTML = "";
+        perror.innerHTML = "";
+
+        if (uname === "" && pname === "") {
+            uerror.innerHTML = "Username is empty:";
+            perror.innerHTML = "Password is empty:";
+        } else if (uname !== "" && pname === "") {
+            perror.innerHTML = "Password is empty:";
+        } else if (uname === "" && pname !== "") {
+            uerror.innerHTML = "Username is empty:";
+        } else {
+            if (uname === "admin" && pname === "admin@123") {
+                window.location.href = "prodects.html";
+            } else if (uname !== "swetha") {
+                alert("Username is incorrect");
+            } else if (pname !== "swe09") {
+                alert("Password is incorrect");
+            }
+        }
+    });
+
+
+           
+</script>
+</body>
+</html>
